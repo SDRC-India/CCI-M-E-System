@@ -1,0 +1,43 @@
+.report-head{
+    margin-top: 20px;
+    padding: 0;
+    border-bottom: 2px solid #444f57;
+}
+.report-head h2{
+    font-size: 22px;
+}
+.report-head::after {
+    margin: 0;
+    padding: 0;
+    right: 0;
+    bottom: -2px;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: #eb9c73;
+}
+.report-content{
+    margin-top: 20px;
+}
+.select-area{
+    display: inline-flex;
+    padding-top: 20px;
+}
+.select-label{
+    text-align: right;
+}
+.download-btn{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.download{
+    background-color: #ab7253;
+    color: white;
+    border-radius: 0;
+}
+.asterisk-mark{
+    color:red;
+    font-size:16px
+}

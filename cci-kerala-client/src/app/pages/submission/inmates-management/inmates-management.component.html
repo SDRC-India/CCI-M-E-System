@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <mat-card>
+        <mat-card-title>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="cci-details">
+                <h2>Inmates Management</h2>
+              </div>
+              </div>
+          </div>
+        </mat-card-title>
+       
+            <sdrc-table [id]="'tab1'" [rowData]="tableData" [columnData]="tableColumns" [maxTableHeight]="'600px'"
+              [sorting]="true" [sortExcludeColumn]="['Action', 'rowId']" [isPaginate]="true" [itemsPerPage]="15"
+              [headerFixed]="true" [searchBox]="true" [downloadPdf]="false"
+              (onActionButtonClicked)="actionClicked($event)" [downloadExcel]="false"></sdrc-table>
+   
+      </mat-card>
+    </div>
+  </div>
+</div>

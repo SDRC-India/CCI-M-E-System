@@ -1,0 +1,147 @@
+h2.dashboard-head{
+    margin-top: 20px;
+    padding: 0;
+    border-bottom: 2px solid #444f57;
+}
+h2.dashboard-head::after {
+    margin: 0;
+    padding: 0;
+    right: 16px;
+    bottom: 8px;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: #eb9c73;
+}
+h2.dashboard-head{
+    font-size: 22px;
+}
+.quick-start-in {
+    width: 100%;
+    padding: 0 0 5% 0;
+    text-align: center;
+    border: 0px solid #e7b345 !important;
+}
+.quick-rnd{
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 10% auto 7%;
+    display: block;
+}
+.rnd{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ab7253;
+    background-color: white;
+}
+.sub-title {  
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;   
+}
+.count {  
+    text-align: center; 
+    letter-spacing: 1px;
+    font-size: 36px;
+    font-weight: 400;
+}
+.mat-card {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.map{
+    height: 100%;
+    // width: 900px;
+}
+agm-map {
+    height: 30rem;
+}
+
+.close-btn{
+    background-color: #1792cf;
+}
+.modal-dialog {
+    margin-top: 0.8rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.5rem !important;
+}
+.modal-body {
+  padding-bottom: 0rem;
+}
+.modal-content{
+    margin-top: 3%;
+}
+.back-arrow{
+    background-color: #ab7253;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 3px;
+    font-size: 19px;
+    font-weight: 600;
+  }
+.back-text{
+    line-height: 2;
+    display: inline-block;
+    float: left;
+    padding-left: 5px;
+  }
+  .back-col{
+    padding: 0;
+  }
+  .back-row{
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0 0 0;
+}
+.card-bg{
+    background-color: #fdf2e2;
+    margin-top: 15px;
+}
+
+@media(max-width: 608px){
+    .dashboard-head h2 {
+        font-size: 20px;
+    }
+    .sub-title {
+        font-size: 18px;
+    }
+    .count {
+        font-size: 22px;
+    }
+
+}
+@media(max-width: 560px){
+    .quick-start-in{
+        padding: 0;
+    }
+    .quick-rnd {
+        margin: 5% auto 2%;
+    }
+
+}
+
+
+.legends{
+    text-align: right;
+    height: 25px;
+}
+.legends ul{
+   padding: 0 0 0 5px;
+}
+.legends ul li {
+    list-style-type: none;
+    display: inline-flex;
+}
+.legends .legnedblock {
+    height: 18px;
+    width: 18px;
+}
+.legends .legend_key {
+    padding-left: 5px;
+    padding-right: 15px;
+    font-size: 12px;
+}

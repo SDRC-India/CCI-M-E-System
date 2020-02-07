@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 cci-sec">
+      <mat-card>
+          <div class="col-md-12 ">
+            <div class="cci-details">
+              <h2>CCI Information</h2>
+            </div>
+          </div>
+        <div class="col-md-12 cci-name">
+        <mat-card-content>
+          <div class="col-sm-12 cci-info">
+            <div class=" p-2" *ngFor="let keys of cciKeys">
+              <strong>{{keys}}</strong> : {{cciInfo[keys]}}
+            </div>
+          </div>
+        </mat-card-content>
+      </div>
+      </mat-card>
+    </div>
+    <div class="col-sm-9 cci-sec">
+      <mat-card>
+        <mat-card-title>
+          <div class="col-md-12 title">
+            <div class="inmate-details">
+              <h2>CCI  Submission Details</h2>
+            </div>
+          </div>
+            <div class="col-md-12 addbutton-inmates" *ngIf="!tableData.length">
+                <i class="material-icons plus" (click)="clickToNavigate(1)" >add</i>
+                <span class="add-new">Add CCI Details</span>
+            </div>
+        </mat-card-title>
+        <div class="col-md-12">
+        
+              <sdrc-table [id]="'tab1'" [rowData]="tableData" [columnData]="tableColumns" [maxTableHeight]="'600px'"
+                [sorting]="true" [sortExcludeColumn]="['Action', 'rowId']" [isPaginate]="true" [itemsPerPage]="15"
+                [headerFixed]="true" [searchBox]="true" [downloadPdf]="false"
+                (onActionButtonClicked)="actionClicked($event)" [downloadExcel]="false">
+              </sdrc-table> 
+
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

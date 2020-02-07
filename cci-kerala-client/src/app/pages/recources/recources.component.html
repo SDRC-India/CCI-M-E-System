@@ -1,0 +1,23 @@
+<div class="container-fluid">
+      <div class="col-md-12 resource-head">
+          <h2>Resources</h2>
+      </div>
+
+  <div class="col-md-12 resources">
+      <table class="table table-responsive table-striped ">
+        <thead>
+          <tr>
+            <th class="table-head">Particulars</th>
+            <th class="table-head">Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let res of resources" >
+            <td>{{res.Particulars}} </td>
+            <td (click)="download(res.download)" style="text-align: center"><i class="fa fa-2x fa-file-pdf-o icon"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</div>

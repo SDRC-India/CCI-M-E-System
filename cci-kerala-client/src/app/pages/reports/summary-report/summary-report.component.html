@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="col-md-12 report-head">
+      <h2>Summary Report </h2>
+    </div>
+</div>
+<div class="container-fluid" *ngIf="indicatorList && indicatorList.length">
+  <div class="row district-dorp">
+      <div class="col-md-2 district" >
+           <label class="district-level">Select Indicator</label>  
+      </div>
+      <div class="col-md-2 dropdown-list">
+          <mat-form-field>
+              <mat-select [(ngModel)]="selectedIndicator" (selectionChange)="indicatorSelection()" [matTooltip]="selectedIndicator?selectedIndicator:'Select Indicator'">
+              <mat-option *ngFor="let opt of indicatorList"   [value]="opt">{{opt}}</mat-option>
+            </mat-select>
+              <mat-error class="padding-bottom">
+                Please select Indicator
+              </mat-error>
+            </mat-form-field>
+      </div>
+      <div class="col-md-1">
+          <div *ngIf="selectedIndicator">                 
+              <button  color="primary" class="reset btn " (click)="reset()" matTooltip="Reset"><i class="material-icons clear" > refresh</i></button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <div class="table-view">
+            <sdrc-table [id]="'tab1'" [rowData]="tableData" [columnData]="tableColumns" [maxTableHeight]="'600px'"
+                [sorting]="false" [sortExcludeColumn]="['Action', 'rowId']" [isPaginate]="true" [itemsPerPage]="12"
+                [headerFixed]="true" [searchBox]="true" [selectDropdown]="false" [downloadPdf]="false" [downloadExcel]="true" [excelHeadings]="[{'Genrated On':currentDate} ,selectedIndicator?{'Indicator' :selectedIndicator }:{}]"  
+                [excelName]="'Summary Report '+currentDate" [indicators]="indicators"
+                (dropdownSelected)="indicatorSelected($event)">
+            </sdrc-table>
+        </div>
+      </mat-card>
+    </div> 
+  </div>
+</div>

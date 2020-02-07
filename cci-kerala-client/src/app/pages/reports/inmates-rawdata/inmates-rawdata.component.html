@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="col-md-12 report-head">
+      <h2>Inmates Raw Data </h2>
+    </div>
+  <div class="row">
+    <div class="col-md-12 report-content">
+      <mat-card class="example-card">
+        <mat-card-content>
+          <div class="col-md-8 offset-md-1 select-area">
+            <div class="col-md-5 select-label">
+              <label [attr.for]="">Select Area: <span class="asterisk-mark">*</span></label>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field>
+                <mat-select [(ngModel)]="districtData" >
+                <mat-option *ngFor="let opt of districtList"  [value]="opt">{{opt.areaName}}</mat-option>
+              </mat-select>
+                <mat-error class="padding-bottom">
+                  Please select area
+                </mat-error>
+              </mat-form-field>
+              
+            </div>
+          </div>
+          <div class="col-md-12 download-btn">
+            <button mat-flat-button color="primary" class="download" (click)="download()" [disabled]="!districtData">Download</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,241 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.clsContent{
+    font-size: 16px;
+}
+ .mat-form-field{
+    width: 100%;
+}
+ .mat-form-field-infix{
+    border-top: 1px solid #999;
+    border: 1px solid #999;
+    border-bottom: none;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+ .mat-pseudo-checkbox-checked:after {
+    width: 10px !important;
+    height: 5px !important;
+}
+
+ .mat-form-field {
+    display: block;
+}
+ .mandatory{color:red;}
+
+ .mat-form-field-suffix{
+    height: 33px;
+    padding-top: 5px;
+    border: 1px solid #adadad;
+}
+.btn-margin{
+    margin-left: 15px;
+}
+.paddingtop{padding-top:5px;}
+.padding-mintop{padding-top:5px;}
+.margin-bottom{margin-bottom: 6px;}
+.margin-mintop{margin-top:7px;}
+.formpadding{padding-top:10px;}
+mat-checkbox#mat-checkbox-1 {
+    padding-right: 15px;
+}
+mat-radio-button#mat-radio-2 {
+    padding-right: 10px;
+}
+mat-checkbox#mat-checkbox-2 {
+    padding-right: 15px;
+   
+}
+.errormssgeront{font-size: 80%;}
+.lineheight{line-height: 5%}
+// #table-fixed-containertab1 #tab1 thead, .btn-pdf, .btn-excel, #header-fixedtab1 thead {
+//     background-color: #234a7c !important;
+// }
+.mt-btn{
+    margin-top: 28px !important;
+}
+.black-overlay{
+    position: fixed !important;
+
+}
+.mob-left-list{
+    background: #1f497b;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+    width: 75px;
+    display: none;
+    position: fixed;
+    left: 0px;
+    z-index: 3;
+    margin-top: 15px;
+  }
+  sdrc-form .mat-form-field-disabled .mat-form-field-infix {
+    border-top-style: dotted;
+    border-left-style: dotted;
+    border-right-style: dotted;
+}
+
+
+sdrc-view-form .mat-form-field-disabled .mat-form-field-infix {
+    border: none !important;
+    border-top-style: none !important;
+    border-left-style: none !important;
+    border-right-style: none !important;
+    border-bottom-style: none;
+}
+sdrc-view-form .mat-select-arrow {
+    /* width: 0; */
+    height: 0 !important;
+    border-left: 0px solid transparent !important;
+    border-right: 0px solid transparent !important;
+}
+sdrc-view-form .mat-form-field-suffix {
+    display: none !important;
+}
+
+sdrc-view-form .mat-select-disabled .mat-select-value ,sdrc-view-form .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after, .mat-input-element:disabled {
+    color: #000;
+}
+.nospinner [type='number'] {
+    -moz-appearance:textfield;
+}  
+.nospinner::-webkit-outer-spin-button,
+.nospinner::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+    margin: 0;
+}  
+.drp-list{
+    right: 0;
+  }
+
+circle.bubble {
+    fill: #1277de80;
+}
+.session-check{color: #e52e2d;}
+.session-check .mat-checkbox-checked.mat-accent .mat-checkbox-background, .session-check .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #e52e2d;
+    
+}
+.training-check{color: #437ffe;}
+.training-check .mat-checkbox-checked.mat-accent .mat-checkbox-background, .training-check .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #437ffe;
+    
+}
+// #table-fixed-containertab1 #tab1 thead, .btn-pdf, .btn-excel, #header-fixedtab1 thead {
+//     background-color: #1792cf !important;
+// }
+.mat-tab-label-active
+{
+    background-color: #eb9c73  !important;
+    color: #fff !important;
+}
+
+.mat-tab-label
+{
+   opacity: 1 !important;
+}
+
+#toast-container > div {
+    opacity:1;
+}
+
+sdrc-table thead, .btn-pdf, .btn-excel, #header-fixedtab1 thead {
+    background-color: #28313d!important;
+}
+.table td, .table th {
+    padding: 5px;
+}
+table thead th {
+    font-weight: 100;
+}
+.mat-tab-label {
+    height: 33px !important;
+}
+.mat-tab-body-content {
+    height: 100%;
+    overflow: hidden !important;
+}
+.col-md-9.input-holder {
+    padding: 0 3px 0 3px !important;
+}
+.back-btn{
+    text-align: left;
+    display: inline-block;
+    float: left;
+ }
+ .back{
+     background-color: #ab7254;
+ }
+ .mt-5, .my-5 {
+     margin-top: 1rem!important;
+ }
+ .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #444f57;
+}
+.mat-card{
+    border:1px solid #ddd !important;
+}
+@media(max-width: 768px){
+    .search-area {
+        font-size: 20px !important;
+    }
+    table thead th {
+        font-size: 14px;
+    }
+  }
+
+@media(max-width: 767px){
+    .table-btn .btn-excel, .table-btn .btn-pdf{
+        font-size: 14px !important;
+        padding: 9px
+    }
+}
+@media(max-width: 608px){
+    td {
+        font-size: 14px;
+    }
+}
+@media(max-width: 480px){
+    table thead th {
+        font-size: 12px;
+    }
+    .mat-tab-label .mat-tab-label-content {
+        font-size: 12px;
+    }
+    .mat-ink-bar{
+        width: 109px;
+    }
+  }
+
+  .grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+  }
+  
+  .grid path {
+    stroke-width: 0;
+  }
+.ngx-pagination .current {
+    background: #eb9c72 !important;
+}
+
+
+
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{
+    background-color: #ab7254 !important; 
+}
+
+mat-checkbox .mat-ripple-element {
+  background: #ab7254 !important;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked {
+    background: #ab7254;
+}

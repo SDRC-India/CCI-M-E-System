@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 no-padding-left">
+      <button mat-icon-button [ngClass]="{'arrow-show': sideNav.opened==false, 'arrow-hide': sideNav.opened==true}"
+        (click)="sidenav.toggle();" fxShow="true" fxHide.gt-sm>
+        <i class="material-icons arrow-icon"> arrow_forward </i>
+      </button>
+
+      <mat-sidenav-container fxFlexFill position="start">
+        <mat-sidenav #sidenav [mode]="mode">
+          <mat-nav-list>
+            <mat-list-item *ngFor="let section of formDetails"
+              (click)="clickSection(section); disablePush?'' :sidenav.toggle()"
+              [ngClass]="{'section-active': selectedSection == section}">
+              <a matLine>
+                {{section.name}}
+              </a>
+              <i class="fa fa-exclamation-circle pull-right rejected-alert" *ngIf="section.rejected"
+                aria-hidden="true"></i>
+            </mat-list-item>
+          </mat-nav-list>
+          <button mat-raised-button color="primary" class="btn btn-default login-submit"
+            [disabled]="selectedSection.disabled" type="submit" (click)="submitClicked()">Save as Draft</button>
+          <button mat-raised-button [disabled]="selectedSection.disabled || selectedSection.submitDisabled" color="primary"
+            class="btn btn-default login-submit" type="submit" (click)="finalizeClicked()">Submit</button>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
+          <div class="container">
+            <!-- <mat-card>
+              <div class="note">
+                  <p><b>Please note:</b> This instance is for user acceptance <b>testing only.</b> Any data entered to this system will not be migrated to the production.</p> 
+              </div>
+            </mat-card> -->
+            <mat-card>
+              <div class="row back-row">
+                <div class="col-md-12 col-sm-12 back-col">
+                  <div class="back-btn">
+                    <i class="fa fa-exclamation-circle rejected-icon" *ngIf="selectedSection.rejectedRemark"
+                      matTooltip="{{selectedSection.rejectedRemark}}"
+                      (click)="viewRejectionReason(selectedSection.rejectedRemark)" aria-hidden="true"></i>
+                    <i class="material-icons back-arrow" (click)="goback()"> arrow_back </i>
+                  </div>
+                  <span class="back-text">Back</span>
+                </div>
+              </div>
+              <mat-card-title>
+                <h4>{{selectedSection.sectionOrder}}. {{sectionName}}</h4>
+              </mat-card-title>
+              <mat-card-content>
+                <sdrc-form [numberOfColumn]="1" [questionArray]="formSections" (onSubmit)="saveForm(formSections)"
+                  #sdrcForm>
+                </sdrc-form>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal fade in" id="UAT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-warning" role="document">
+      <div class="modal-content">
+     
+  
+          <div class="modal-body">
+              <div class="text-center">
+                  <p>This instance is for user acceptance <b>testing only.</b> Any data entered to this system will not be migrated to the production.</p>
+              </div>
+              <button type="button" class="btn btn-secondary m-auto d-block modal-btn" data-dismiss="modal">Ok</button>
+          </div>
+      </div>
+  </div>
+</div> -->

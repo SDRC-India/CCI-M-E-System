@@ -1,0 +1,17 @@
+.cci-details{
+    border-bottom: 2px solid #444f57;
+}
+.cci-details h2{
+    font-size: 22px;
+}
+.cci-details::after{
+    margin: 0;
+    padding: 0;
+    right: 0;
+    bottom: 0px;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: #eb9c73;
+}

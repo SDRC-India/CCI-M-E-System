@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row back-row">
+    <div class="col-md-6 ">
+        <div class="back-btn">
+        <i class="material-icons back-arrow" (click)="goback()"> arrow_back </i>
+        </div>
+        <span class="back-text">Back</span> 
+      </div>
+      <div class="col-md-6 download">
+        <div class="download-btn">
+        <i class="material-icons back-arrow save-button" (click)="htmltoPDF()"> description </i>
+        </div>
+        <span class="download-text">Download</span> 
+    </div>
+</div>
+
+  <div class="row content cont-main p-0 mt-5">
+    <div class="col-sm-12 pl-5 pr-5" *ngFor="let section of formDetails">
+      <div class="section-head">
+        <h4>{{section.sectionOrder}}. {{section.name}}</h4>
+        <hr class="style-one">
+      </div>
+      <sdrc-view-form [numberOfColumn]="1" [questionArray]="section.questions"  #sdrcForm>
+      </sdrc-view-form>
+    </div>
+  </div>
+</div>

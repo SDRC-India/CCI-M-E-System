@@ -1,0 +1,146 @@
+.header-fixed { 
+    position: absolute; 
+    display:none;
+    z-index: 1;
+    overflow: hidden;
+    margin-right: 15px;
+    // width: auto;
+}
+.parent-tabl-container{
+    position: relative;
+}
+
+table thead{
+    background-color: #28313d;
+    color: #FFF;
+    font-size: 14px;
+}
+td{
+    text-align: center;
+    vertical-align: middle;
+}
+table thead th{
+    vertical-align: middle;
+    text-align: center;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+    font-size: 14px;
+}
+.table-striped tbody tr:nth-of-type(even) {
+    font-size: 14px;
+}
+.pagination-view
+{
+    float:right;
+}
+#myInput {
+    width: 100%;
+    border-radius: 0;
+    font-size: 16px; 
+    padding: 7px 20px 12px 30px;
+    font-style: inherit;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    box-shadow: 0px 0px 2px 0px;
+}
+.table-btn.search .form-group{
+    position: relative;
+}
+.table-btn.search .form-group:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 5px;
+    left: 7px;
+    color: #9c9c9c;
+    content: "\f002";
+  }
+
+.search-area
+{
+    font-style: italic;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+// .search-box{
+//     top: -55px;
+// }
+// .table-sec{
+//     top: -8px;
+// }
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 23%;
+    float: left;
+}
+
+mat-checkbox {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 23%;
+    float: left;
+}
+
+
+mat-label.ng-star-inserted {
+    padding-left: 5px;
+}
+input[type="text"] 
+{
+    font-style:italic;
+}
+.table-btn .btn-excel, .table-btn .btn-pdf{
+    margin-bottom: 16px;
+    background-color: #357080;
+    color: #FFF;
+    border-radius: 0;
+}
+.btn-excel:focus, .btn-excel:active{
+    outline: none !important;
+    border: none !important;
+}
+.fa-sorting{
+    cursor: pointer;
+}
+.table-btn {
+    display: inline-block;
+    float: right;
+    margin: 0 5px;
+    // margin-bottom: 15px;
+}
+::ng-deep .mat-tooltip {
+    color: white !important;
+    background-color: #eb9c73 !important;
+}
+
+.hyperlink
+{
+    color: #007bff !important;
+    cursor: pointer;
+}
+
+.hyperlink:hover
+{
+    text-decoration: underline !important;
+    color:#126ac7 !important;
+}
+.reset{
+    background-color: #28313d;
+    color: white;
+    margin-left: 15px;
+    border-radius: 0;
+    height: 33px;
+    padding: 5px;
+}
+.clear{
+    font-weight: 600;
+    font-size: 19px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}

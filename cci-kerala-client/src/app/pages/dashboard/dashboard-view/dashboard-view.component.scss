@@ -1,0 +1,186 @@
+h2.dashboard-head{
+    padding: 0;
+    border-bottom: 2px solid #444f57;
+}
+h2.dashboard-head::after {
+    margin: 0;
+    padding: 0;
+    right: 16px;
+    bottom: 8px;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: #eb9c73 ;
+}
+h2.dashboard-head{
+    font-size: 22px;
+    font-weight: 400;
+}
+.quick-start-in {
+    width: 100%;
+    padding: 0 0 5% 0;
+    text-align: center;
+    border: 0px solid #e7b345 !important;
+}
+.quick-rnd{
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 10% auto 7%;
+    display: block;
+}
+.rnd{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ab7253;
+    background-color: white;
+
+}
+.sub-title {  
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;   
+}
+.count {  
+    text-align: center; 
+    letter-spacing: 1px;
+    font-size: 36px;
+    font-weight: 400;
+}
+.mat-card {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.map{
+    height: 100%;
+}
+agm-map {
+    height: 30rem;
+}
+
+.close-btn{
+    background-color: #eb9c73;
+}
+.modal-dialog {
+    margin-top: 0.8rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.5rem !important;
+}
+.modal-body {
+  padding-bottom: 0rem;
+}
+.modal-content{
+    margin-top: 3%;
+}
+mat-label.ng-star-inserted {
+    padding-left: 5px;
+}
+
+.selectedAreaName{
+    font-size: 20px;
+    color: #28313d;
+}
+
+.district-dorp{
+    margin-top: 15px;
+}
+.district{
+    padding-right: 0;
+}
+.district-level{
+    font-size: 15px;
+    line-height: 32px;
+}
+.dropdown-list{
+    width: 30%;
+}
+.mat-form-field {
+    width: 20% !important;
+}
+.card-bg{
+     background-color: #fdf2e2;
+}
+.cclist{
+    margin-top: 20px;
+}
+.chart-group{
+    margin-top: 20px;
+}
+.cci-table{
+   margin-top: 0;
+   border: 1px solid #ddd; 
+}
+.remove-button {
+    top: -18px;
+    cursor: pointer !important;
+}
+
+.legends{
+    text-align: right;
+    height: 25px;
+}
+.legends ul{
+   padding: 0 0 0 5px;
+}
+.legends ul li {
+    list-style-type: none;
+    display: inline-flex;
+}
+.legends .legnedblock {
+    height: 15px;
+    width: 15px;
+}
+.legends .legend_key {
+    padding-left: 5px;
+    padding-right: 15px;
+    font-size: 12px;
+}
+ .legnedblock1 {
+    height: 15px;
+    width: 15px;
+    background-color: #e7b345;
+}
+ .legend_key1 {
+    padding-left: 5px;
+    padding-right: 15px;
+    font-size: 12px;
+}
+
+@media(max-width: 1024px){
+    .mat-form-field {
+        width: 30% !important;
+    }
+.ind-group{
+    font-size: 13px;
+    }
+    
+}
+
+@media(max-width: 608px){
+    .dashboard-head h2 {
+        font-size: 20px;
+    }
+    .sub-title {
+        font-size: 18px;
+    }
+    .count {
+        font-size: 22px;
+    }
+    .dropdown-list {
+        width: 100%;
+    }
+}
+@media(max-width: 560px){
+    .quick-start-in{
+        padding: 0;
+    }
+    .quick-rnd {
+        margin: 5% auto 2%;
+    }
+
+}
+
+

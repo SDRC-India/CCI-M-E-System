@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Rejection Reason</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="reason-form">
+    <mat-form-field class="textfield-full-width">
+      <textarea matInput rows="10" maxlength="200"  [(ngModel)]="reasons" placeholder="Leave a reason"></textarea>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click)="submitClicked()" cdkFocusInitial [disabled]="!reasons || reasons.trim().length <=0">Submit</button>
+</mat-dialog-actions>

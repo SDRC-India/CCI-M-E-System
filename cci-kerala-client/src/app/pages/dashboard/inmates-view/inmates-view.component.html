@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="row back-row">   
+        <div class="col-md-12 col-sm-12">
+            <div class="back-btn">
+                <i class="material-icons back-arrow" (click)="goback()"> arrow_back </i>
+              </div>
+              <span class="back-text">Back</span> 
+        </div>
+      </div>
+</div> 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 ">
+          <h2 class="dashboard-head">{{dashboardservice.selectedCCIName}} at a glance</h2>
+        </div>
+      </div>
+</div>   
+
+  <!-- <div class="row">
+    <div class="col-md-3 col-sm-6 col-12 circle" *ngFor="let quick of quickStarts">
+      <div class="quick-start-in">
+        <div class="quick-rnd">
+          <img class="rnd" [src]="quick.img">
+        </div>
+        <span class="sub-title">{{quick.label}}</span>
+        <br>
+        <span class="count">{{quick.value}}</span>
+      </div>
+    </div>
+  </div> -->
+  <div class="container-fluid " *ngFor="let typeOfData of typeOfDatas; let i=index;">
+    <!-- <div class="row">
+        <div class="col-md-12 selected-area-block" >
+            <span class="selectedAreaName">{{typeOfData}}</span>
+        </div>
+    </div> -->
+    <!-- <div class="row">
+        <div class="col-md-12 selected-area-block">
+            <span>{{subsector.subSectorName}}</span>
+        </div>
+    </div> -->
+    <div class="row card-bg">
+        <div class="col-md-3 col-sm-6 col-12 circle" *ngFor="let quick of dashboardLandingPages[typeOfData].quickStarts">
+            <div class="quick-start-in">
+              <div class="quick-rnd">
+                <img class="rnd" [src]="quick.img">
+              </div>
+              <span class="sub-title">{{quick.label}}</span>
+              <br>
+              <span class="count">{{quick.value}}</span>
+            </div>
+          </div>
+    </div>
+    <div class="row chart-group">
+      <div [ngClass]="chart.cssClass"   *ngFor="let chart of dashboardLandingPages[typeOfData].groupedIndicators">
+        <mat-card>
+          <div class="chart-head">
+              <div class="ind-group">{{chart.groupedIndName}}</div>
+            </div>
+          <scps-pie-chart
+          *ngIf="chart.chartData && ((!chart.selectedChart && chart.chartsAvailable[0] == 'pie') || chart.selectedChart == 'pie' )"
+          [data]="removeReference(chart.chartData[0])">
+        </scps-pie-chart>
+        <section class="legends"  *ngIf="chart.chartData && (!chart.selectedChart && chart.chartsAvailable[0] == 'pie') && chart.legendClass">
+          <ul *ngIf="getKeys(chart.legendClass).length">
+            <li  class="legend_list" *ngFor="let legendData of chart.legendClass|keyvalue">
+              <div class=" legnedblock" [ngStyle]="{backgroundColor:legendData.value}"> </div>
+              <span class="legend_key">{{legendData.key}}</span>
+            </li>
+          </ul>
+        </section>
+        
+        <scps-bar-chart
+        *ngIf="chart.chartData && ( chart.chartsAvailable[0] == 'bar')"
+        [data]="removeReference(chart.chartData)" [xGrid]="false" [yGrid]="true" [values]="true">
+      </scps-bar-chart>
+      </mat-card>
+      </div>
+    </div>
+</div>
+
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12 ">
+              <h2 class="dashboard-head">List of Inmates</h2>
+            </div>
+      </div>
+  </div>
+
+  <mat-card>
+      <div class="table-view">
+        <sdrc-table [id]="'tab1'" [rowData]="tableData" [columnData]="tableColumns" [maxTableHeight]="'600px'"
+          [sorting]="true" [sortExcludeColumn]="['Action', 'rowId']" [isPaginate]="true" [itemsPerPage]="15"
+          [headerFixed]="true" [searchBox]="true" [downloadPdf]="false" [downloadExcel]="false" (onActionButtonClicked)="actionClicked($event)">
+        </sdrc-table>
+      </div>
+    </mat-card>
+

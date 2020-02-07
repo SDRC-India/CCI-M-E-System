@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 back-row">
+          <div class="back-btn">
+          <i class="material-icons back-arrow" (click)="goback()"> arrow_back </i>
+          </div>
+          <span class="back-text">Back</span>
+          </div> 
+  </div>
+  <div class="row content cont-main p-0 mt-5">
+      <!-- <div class="col-md-12 back-btn">
+          <i class="material-icons back-arrow" (click)="goback()"> arrow_back </i>
+      </div> -->
+    <div class="col-sm-12 pl-5 pr-5" *ngFor="let section of formDetails">
+      <div class="section-head">
+        <h4>{{section.sectionOrder}}. {{section.name}}
+          <mat-checkbox class="check-rejection" (change)="checkValue(section)"
+            [(ngModel)]="section.rejected" *ngIf="section.name != 'Ratings & Remarks'">Rejected</mat-checkbox>
+        </h4>
+        <hr class="style-one">
+      </div>
+      <sdrc-view-form [numberOfColumn]="1" [questionArray]="section.questions" #sdrcForm>
+      </sdrc-view-form>
+    </div>
+
+  </div>
+  <div class="text-center mb-5">
+    <button mat-raised-button color="primary" class="btn btn-default btn-width" type="submit"
+      (click)="approvedClicked()">Approve</button>
+    <button mat-raised-button color="primary" class="btn btn-default btn-width" type="submit"
+      (click)="rejectClicked()" [disabled]="rejectedButtonDisable" >Reject</button>
+  </div>
+</div>

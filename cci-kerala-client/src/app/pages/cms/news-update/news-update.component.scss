@@ -1,0 +1,88 @@
+.dashboard-head{
+    margin-top: 20px;
+    padding: 0;
+    border-bottom: 2px solid #444f57;
+}
+.dashboard-head::after {
+    margin: 0;
+    padding: 0;
+    right: 0;
+    bottom: -2px;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: #eb9c73;
+}
+.dashboard-head h2{
+    font-size: 22px;
+}
+.news-card{
+    margin-top: 20px;
+}
+.title{
+    margin-top: 30px;
+}
+.news-btn{
+    text-align: center;
+    margin-top: 15px;
+}
+.first-button, .second-button{
+    background-color: #ab7253;
+    color: white;
+}
+.left-btn-margin{
+    margin-right: 10px;
+}
+.news-update-table{
+    display: inline-table;
+    margin-top: 20px;
+}
+.news-update-Form{
+    width: 600px !important;
+    margin: 0px auto;
+}
+table.table a{
+    color: #4285f4;
+}
+th.th-header {
+    background-color: #086b9c;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+td {
+    color: #111 !important;
+}
+.errormsg{
+    color: red;
+    font-size: 12px;
+    margin-top: -20px;
+}
+.news-add{
+    margin-top: 15px;
+}
+.asterisk-mark{
+    color:red;
+    font-size:16px
+}
+.submit-button{
+    width: 25%;
+    margin: 5px 5px 25px 0px;
+    padding: 0rem 0rem;   
+    background-color: #ab7253;
+    border-radius: 0rem;
+    color: #FFF;
+}
+@media(max-width: 640px){
+    .news-update-table{
+        display: block;
+        overflow-x: auto;
+    }
+}
+@media(max-width: 480px){
+    .news-update-table{
+        display: block;
+        overflow-x: auto;
+    }
+}

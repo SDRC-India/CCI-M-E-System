@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 cci-sec">
+      <mat-card>
+          <div class="col-md-12 ">
+            <div class="cci-details">
+              <h2>CCI Information</h2>
+            </div>
+          </div>
+        <div class="col-md-12 cci-name">
+        <mat-card-content>
+          <div class="col-sm-12 cci-info">
+            <div class=" p-2" *ngFor="let keys of cciKeys">
+              <strong>{{keys}}</strong> : {{cciInfo[keys]}}
+            </div>
+          </div>
+        </mat-card-content>
+      </div>
+      </mat-card>
+    </div>
+    <div class="col-sm-9 cci-sec">
+      <mat-card>
+        <mat-card-title>
+          <div class="col-md-12 title">
+            <div class="inmate-details">
+              <h2>Inmates Details</h2>
+            </div>
+          </div>
+            <div class="col-md-12 addbutton-inmates">
+                <i class="material-icons plus" (click)="clickToNavigate(2)" >add</i>
+                <span class="add-new">Add Inmates</span>
+            </div>
+        </mat-card-title>
+        <div class="col-md-12">
+          <mat-tab-group>
+            <mat-tab *ngFor="let item of tableData; let i = index" label="{{item.name}} ({{item.data.length}})" class="mt-5">
+              <sdrc-table [id]="item.name" [rowData]="item.data" [columnData]="tableColumns" [maxTableHeight]="'600px'"
+                [sorting]="true" [sortExcludeColumn]="['Action', 'rowId']" [isPaginate]="true" [itemsPerPage]="15"
+                [headerFixed]="true" [searchBox]="true" [downloadPdf]="false"
+                (onActionButtonClicked)="actionClicked($event)" [downloadExcel]="false">
+              </sdrc-table> 
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,171 @@
+<div class="container">
+  <div class="row news-add">
+    <div class="col-md-12">
+      <mat-tab-group>
+        <mat-tab label="User Management">
+          <mat-accordion>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>add_circle_outline</mat-icon>
+                  Add User
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <form [formGroup]="userFormGroup" (submit)="userSubmit(UserDirective)" class="userForm" #UserDirective="ngForm">
+                <div class="row">
+                  <div class="col-md-2">
+                    State
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field>
+                      <mat-select matInput formControlName="state">
+                        <mat-option *ngFor="let item of stateList" [value]="item.areaId">
+                          {{item.areaName}}
+                        </mat-option>
+                      </mat-select>
+                      <mat-error>
+                        Please provide state.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 pr-0">
+                    User Name <span class="asterisk-mark">*</span>
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field>
+                      <input matInput type="text" formControlName="username">
+                      <mat-error>
+                        Please provide user name.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    Email
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field>
+                      <input matInput formControlName="email">
+                      <mat-error>
+                        Please provide valid email.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button mat-raised-button [ngClass]="'submit'" id="submit-button"
+                      class="btn-margin submit-btn login-submit" type="submit" color="primary">Submit</button>
+                    <button mat-raised-button [ngClass]="'submit'" id="reset-button"
+                      class="btn-margin submit-btn login-submit" color="primary" (click)="reset('User')">Reset</button>
+                  </div>
+                </div>
+              </form>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-tab>
+        <mat-tab label="CCI Management">
+          <mat-accordion>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>add_circle_outline</mat-icon>
+                  Add CCI
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <form [formGroup]="cciUserFormGroup" (submit)="cciSubmit(CCIDirective)" class="userForm" #CCIDirective="ngForm">
+                <div class="row">
+                  <div class="col-md-2">
+                    State
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field>
+                      <mat-select matInput formControlName="state">
+                        <mat-option *ngFor="let item of stateList" [value]="item.areaId">
+                          {{item.areaName}}
+                        </mat-option>
+                      </mat-select>
+                      <mat-error>
+                        Please provide state.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    District <span class="asterisk-mark">*</span>
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field>
+                      <mat-select matInput formControlName="district" required>
+                        <mat-option *ngFor="let item of districtList" [value]="item.areaId">
+                          {{item.areaName}}
+                        </mat-option>
+                      </mat-select>
+                      <mat-error>
+                        Please provide district.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    CCI Name <span class="asterisk-mark">*</span>
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field>
+                      <input matInput formControlName="cciname">
+                      <mat-error>
+                        Please provide cci name.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    Email
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field>
+                      <input matInput formControlName="email">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button mat-raised-button [ngClass]="'submit'" id="submit-button"
+                      class="btn-margin submit-btn login-submit" type="submit" color="primary">Submit</button>
+                    <button mat-raised-button [ngClass]="'submit'" id="submit-button"
+                      class="btn-margin submit-btn login-submit" color="primary" (click)="reset('CCI')">Reset</button>
+                  </div>
+                </div>
+              </form>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="col-md-12 dashboard-head cclist">
+    <h2>List of Users</h2>
+  </div>
+</div>
+<div class="container">
+  <div class="example-large-box table-responsive" style="overflow-x:auto;margin-top: 10px">
+    <mat-tab-group>
+      <mat-tab *ngFor="let item of tableData; let i = index" label="{{item.name}} ({{item.data.tableData.length}})"
+        class="mt-5">
+        <sdrc-table [id]="item.name" [rowData]="item.data.tableData" [columnData]="item.data.tableHeader"
+          [maxTableHeight]="'600px'" [sorting]="true" [sortExcludeColumn]="['Action', 'rowId']" [isPaginate]="true"
+          [itemsPerPage]="15" [headerFixed]="true" [searchBox]="true" [downloadPdf]="false"
+          (onActionButtonClicked)="actionClicked($event)" [downloadExcel]="false">
+        </sdrc-table>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

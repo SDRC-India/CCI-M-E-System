@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="col-md-12 dashboard-head cclist">
+      <h2>News Update</h2>
+  </div>  
+</div>
+<div class="container">
+  <div class="row mt-10 m-10 news-add">
+        <div class="col-md-12 m-10">
+          <mat-accordion>
+            <mat-expansion-panel  [expanded]="isExpanded" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>add_circle_outline</mat-icon>
+                  Add News Update
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <form [formGroup]="newsUpdateForm" (submit)="submit(formDirective)" class="news-update-Form" #form #formDirective="ngForm">
+                <div class="row">
+                  <div class="col-md-2 pr-0">
+                    News Title <span class="asterisk-mark">*</span>
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field class="field-width">
+                      <textarea matInput formControlName="newsTitle" name='newstitle' id="newstitle">
+                      </textarea>
+                      <mat-error>
+                        Please provide news title.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2 pr-0">
+                    News Link <span class="asterisk-mark">*</span>
+                  </div>
+                  <div class="col-md-10">
+                    <mat-form-field class="field-width">
+                      <input matInput type="url"
+                      formControlName="newsUrl">
+                      <mat-error *ngIf="newsUpdateForm.controls['newsUrl'].errors?.required">
+                          Please provide news link.
+                      </mat-error>
+                      <mat-error *ngIf="newsUpdateForm.controls['newsUrl'].errors?.pattern">
+                          Please provide valid news link.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button mat-raised-button type="submit" class="left-btn-margin first-button submit-button" *ngIf="buttonName == 'Submit'">Submit</button>
+                    <button mat-raised-button type="submit" class="left-btn-margin first-button submit-button" *ngIf="buttonName == 'Update'">Update</button>
+                    <button  mat-raised-button (click)="reset();" class="left-btn-margin second-button submit-button">Reset</button>
+                  </div>
+                </div>
+              </form>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+  </div>
+  <div class="example-large-box table-responsive" style="overflow-x:auto;margin-top: 10px"> 
+      <sdrc-table [id]="'tab1'" [rowData]="tableData" [columnData]="tableColumns" [maxTableHeight]="'600px'"
+        [sorting]="true" [sortExcludeColumn]="['Action', 'rowId']" [isPaginate]="false" [itemsPerPage]="15"
+        [headerFixed]="true" [searchBox]="true" [selectDropdown]="false" [downloadPdf]="false" [downloadExcel]="false"  (onActionButtonClicked)="actionClicked($event)">
+      </sdrc-table>
+  </div>
+</div>
+

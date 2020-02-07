@@ -1,0 +1,156 @@
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 select-area">
+      <div class="col-md-2 select-label">
+        <label [attr.for]="">Select District: <span class="asterisk-mark">*</span></label>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field>
+          <mat-select [(ngModel)]="districtData" >
+          <mat-option *ngFor="let opt of districtList" (onSelectionChange)="districtSelection()"  [value]="opt">{{opt.areaName}}</mat-option>
+        </mat-select>
+          <mat-error class="padding-bottom">
+            Please select area
+          </mat-error>
+        </mat-form-field>      
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid" *ngIf="districtList && districtList.length">
+    <div class="row district-dorp">
+        <div class="col-md-1 district" >
+             <label class="district-level">Select District</label>  
+        </div>
+        <div class="col-md-10 dropdown-list">
+            <mat-form-field>
+                <mat-select [(ngModel)]="selectedDistrict" (selectionChange)="districtSelection()" >
+                <mat-option *ngFor="let opt of districtList"   [value]="opt">{{opt.areaName}}</mat-option>
+              </mat-select>
+                <mat-error class="padding-bottom">
+                  Please select area
+                </mat-error>
+              </mat-form-field>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 " >
+      <h2 class="dashboard-head">{{area}} at a glance</h2>
+    </div>
+  </div> 
+</div>
+  <div class="container-fluid " *ngFor="let typeOfData of typeOfDatas; let i=index;">
+      <div class="row">
+          <div class="col-md-12 selected-area-block" >
+              <span class="selectedAreaName">{{typeOfData}}</span>
+          </div>
+      </div>
+      <!-- <div class="row">
+          <div class="col-md-12 selected-area-block">
+              <span>{{subsector.subSectorName}}</span>
+          </div>
+      </div> -->
+      <div class="row card-bg">
+          <div class="col-md-3 col-sm-6 col-12 circle" *ngFor="let quick of dashboardLandingPages[typeOfData].quickStarts">
+              <div class="quick-start-in">
+                <div class="quick-rnd">
+                  <img class="rnd" [src]="quick.img">
+                </div>
+                <span class="sub-title">{{quick.label}}</span>
+                <br>
+                <span class="count">{{quick.value}}</span>
+              </div>
+            </div>
+      </div>
+      <div class="row chart-group">
+        <div [ngClass]="chart.cssClass"   *ngFor="let chart of dashboardLandingPages[typeOfData].groupedIndicators">
+          <mat-card>
+            <div class="chart-head">
+                <div class="ind-group">{{chart.groupedIndName}}</div>
+              </div>
+            <scps-pie-chart
+            *ngIf="chart.chartData && ((!chart.selectedChart && chart.chartsAvailable[0] == 'pie') || chart.selectedChart == 'pie' )"
+            [data]="removeReference(chart.chartData[0])">
+          </scps-pie-chart>
+
+        <section class="legends"  *ngIf="chart.chartData && (!chart.selectedChart && chart.chartsAvailable[0] == 'pie') && chart.legendClass">
+              <ul *ngIf="getKeys(chart.legendClass).length">
+                <li  class="legend_list" *ngFor="let legendData of chart.legendClass|keyvalue">
+                  <div class=" legnedblock" [ngStyle]="{backgroundColor:legendData.value}"> </div>
+                  <span class="legend_key">{{legendData.key}}</span>
+                </li>
+              </ul>
+            </section>
+
+
+          <scps-bar-chart
+          *ngIf="chart.chartData && ( chart.chartsAvailable[0] == 'bar')"
+          [data]="removeReference(chart.chartData)" [xGrid]="false" [yGrid]="true" [values]="true">
+        </scps-bar-chart>
+        </mat-card>
+        </div>
+      </div>
+  </div>
+
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 " >
+            <h2 class="dashboard-head">List of CCIs</h2>
+          </div>
+        </div> 
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <mat-card class="cci-table">
+              <div class="table-view">
+                <sdrc-table [id]="'tab1'" [rowData]="tableData" [columnData]="tableColumns" [maxTableHeight]="'600px'"
+                  [sorting]="true" [sortExcludeColumn]="['Action', 'rowId']" [isPaginate]="true" [itemsPerPage]="15"
+                  [headerFixed]="true" [searchBox]="true" [selectDropdown]="false" [downloadPdf]="false" 
+                  [downloadExcel]="false" [excelHeadings]="true" [districts]="districts" 
+                  (onActionButtonClicked)="actionClicked($event)" (dropdownSelected)="districtSelected($event)" [checkbox]="totalData&&totalData.length?true:false" 
+                  [checboxText]="'Exceeding Maximum Strength'"  (checkboxSelected)="filterExceedingCol($event)">
+                </sdrc-table>
+              </div>      
+            </mat-card>
+          </div>
+        </div>
+      </div>
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-width">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="map" id="map">
+          <agm-map [latitude]="mapData.lat" [longitude]="mapData.lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="true" [mapDraggable]="true">
+
+            <agm-marker  [latitude]="mapData.lat"
+              [longitude]="mapData.lng" [markerDraggable]="mapData.draggable" >
+              
+              <agm-info-window [disableAutoPan]="false" #infoWindow>
+                <p style="font-size: 15px; color: #313e4d; display: inline;">
+                  <strong>{{mapData.name}}</strong><br>
+              </agm-info-window>
+
+            </agm-marker>
+            
+          </agm-map>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" mat-raised-button color="primary" data-dismiss="modal" class="pre-btn">Close</button> -->
+        <!-- <button type="button" mat-raised-button color="primary" (click)="submitData()" class="pre-btn">Submit</button> -->
+        <button mat-mini-fab color="warn" class="close-btn"  data-dismiss="modal" ><i class="material-icons plus">clear</i></button>
+
+      </div>
+    </div>
+  </div>
+</div>
