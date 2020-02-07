@@ -1,0 +1,57 @@
+{"properties": [
+  {
+    "name": "authentication.userid",
+    "type": "java.lang.String",
+    "description": "Email Id used for sending password"
+  },
+  {
+    "name": "authentication.password",
+    "type": "java.lang.String",
+    "description": "Password of provided email id "
+  },
+  {
+    "name": "application.security.type",
+    "type": "java.lang.String",
+    "description": "Type of security need to be configured"
+  },
+  {
+    "name": "app.datasource.type",
+    "type": "java.lang.String",
+    "description": "Data Source type to be used in security and user details"
+  },
+  {
+    "name": "resource.server.resourceid",
+    "type": "java.lang.String",
+    "description": "Resource id of server"
+  },
+  {
+    "name": "jwt.jks.password",
+    "type": "java.lang.String",
+    "description": "JKS file password"
+  },
+  {
+    "name": "jwt.jks.alias",
+    "type": "java.lang.String",
+    "description": "JKS file alias"
+  },
+  {
+    "name": "security.allow.path",
+    "type": "java.lang.String",
+    "description": "Paths to be accessed without login"
+  },
+  {
+    "name": "allow.admin.creation",
+    "type": "java.lang.String",
+    "description": "A description for 'allow.admin.creation'"
+  },
+  {
+    "name": "sdrc.security.disable.createuser.endpoints",
+    "type": "java.lang.String",
+    "description": "Enable method level security on user creation"
+  },
+  {
+    "name": "sdrc.security.disable.frameOptions",
+    "type": "java.lang.String",
+    "description": "To disable the frame option in case you need x-frame"
+  }
+]}

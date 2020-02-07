@@ -1,0 +1,86 @@
+core_indicator,indicator_name,indicator_order,indicator_table,is_live,query_index
+CCIs registered under JJ Act,CCIs registered under JJ Act,1,INSTITUTION,t,0
+CCIs registered under JJ Act,No. of Govt. CCIs (Total),2,INSTITUTION,t,1
+CCIs registered under JJ Act,No. of Govt. CCIs (Boys),3,INSTITUTION,t,2
+CCIs registered under JJ Act,No. of Govt. CCIs (Girls),4,INSTITUTION,t,3
+CCIs registered under JJ Act,No. of Govt. CCIs (Mixed),5,INSTITUTION,t,4
+CCIs registered under JJ Act,No. of NGO CCIs (Total),6,INSTITUTION,t,5
+CCIs registered under JJ Act,No. of NGO CCIs (Boys),7,INSTITUTION,t,6
+CCIs registered under JJ Act,No. of NGO CCIs (Girls),8,INSTITUTION,t,7
+CCIs registered under JJ Act,No. of NGO CCIs (Mixed),9,INSTITUTION,t,8
+Types of CCIs,No. of SAA,10,INSTITUTION,t,9
+Types of CCIs,No. of Children's Home,11,INSTITUTION,t,10
+Types of CCIs,No. of Open Shelter,12,INSTITUTION,t,11
+Types of CCIs,No. of Place of Safety,13,INSTITUTION,t,12
+Types of CCIs,No. of Observation Home,14,INSTITUTION,t,13
+Current Strength,Current Strength,24,INMATES,t,0
+Current Strength,Current Strength - Girls (Total),25,INMATES,t,1
+Current Strength,Current Strength - Girls (Age 0 - 5),26,INMATES,t,2
+Current Strength,Current Strength - Girls (Age 6 - 10),27,INMATES,t,3
+Current Strength,Current Strength - Girls (Age 11 - 14),28,INMATES,t,4
+Current Strength,Current Strength - Girls (Age 15 - 18),29,INMATES,t,5
+Current Strength,Current Strength - Boys (Total),30,INMATES,t,6
+Current Strength,Current Strength - Boys (Age 0 - 5),31,INMATES,t,7
+Current Strength,Current Strength - Boys (Age 6 - 10),32,INMATES,t,8
+Current Strength,Current Strength - Boys (Age 11 - 14),33,INMATES,t,9
+Current Strength,Current Strength - Boys (Age 15 - 18),34,INMATES,t,10
+Current Strength,Current Strength - Transgenders (Total),35,INMATES,t,11
+Current Strength,Current Strength - Transgenders (Age 0 - 5),36,INMATES,t,12
+Current Strength,Current Strength - Transgenders (Age 6 - 10),37,INMATES,t,13
+Current Strength,Current Strength - Transgenders (Age 11 - 14),38,INMATES,t,14
+Current Strength,Current Strength - Transgenders (Age 15 - 18),39,INMATES,t,15
+Blacklisted CCIs,Blacklisted CCIs,40,INSTITUTION,t,23
+CCIs with reported Police Cases,CCIs with reported Police Cases,41,INSTITUTION,t,24
+No. of CCIs with expired JJ license,No. of CCIs with expired JJ license,42,INSTITUTION,t,25
+No. of CCIs with expired JJ license,No. of Govt. CCIs with expired JJ license,43,INSTITUTION,t,26
+No. of CCIs with expired JJ license,No. of NGO CCIs with expired JJ license,44,INSTITUTION,t,27
+Children having Formal Education,Children having Formal Education,45,INMATES,t,16
+Children having Formal Education,Children having Formal Education - Girls (Total),46,INMATES,t,17
+Children having Formal Education,Children having Formal Education - Girls (Age 0 - 5),47,INMATES,t,18
+Children having Formal Education,Children having Formal Education - Girls (Age 6 - 10),48,INMATES,t,19
+Children having Formal Education,Children having Formal Education - Girls (Age 11 - 14),49,INMATES,t,20
+Children having Formal Education,Children having Formal Education - Girls (Age 15 - 18),50,INMATES,t,21
+Children having Formal Education,Children having Formal Education - Boys (Total),51,INMATES,t,22
+Children having Formal Education,Children having Formal Education - Boys (Age 0 - 5),52,INMATES,t,23
+Children having Formal Education,Children having Formal Education - Boys (Age 6 - 10),53,INMATES,t,24
+Children having Formal Education,Children having Formal Education - Boys (Age 11 - 14),54,INMATES,t,25
+Children having Formal Education,Children having Formal Education - Boys (Age 15 - 18),55,INMATES,t,26
+Children having Formal Education,Children having Formal Education - Transgenders (Total),56,INMATES,t,27
+Children having Formal Education,Children having Formal Education - Transgenders (Age 0 - 5),57,INMATES,t,28
+Children having Formal Education,Children having Formal Education - Transgenders (Age 6 - 10),58,INMATES,t,29
+Children having Formal Education,Children having Formal Education - Transgenders (Age 11 - 14),59,INMATES,t,30
+Children having Formal Education,Children having Formal Education - Transgenders (Age 15 - 18),60,INMATES,t,31
+Children having Vocational training ,Children having Vocational training ,61,INMATES,t,32
+Children having Vocational training ,Children having Vocational training  - Girls (Total),62,INMATES,t,33
+Children having Vocational training ,Children having Vocational training  - Girls (Age 0 - 5),63,INMATES,t,34
+Children having Vocational training ,Children having Vocational training  - Girls (Age 6 - 10),64,INMATES,t,35
+Children having Vocational training ,Children having Vocational training  - Girls (Age 11 - 14),65,INMATES,t,36
+Children having Vocational training ,Children having Vocational training  - Girls (Age 15 - 18),66,INMATES,t,37
+Children having Vocational training ,Children having Vocational training  - Boys (Total),67,INMATES,t,38
+Children having Vocational training ,Children having Vocational training  - Boys (Age 0 - 5),68,INMATES,t,39
+Children having Vocational training ,Children having Vocational training  - Boys (Age 6 - 10),69,INMATES,t,40
+Children having Vocational training ,Children having Vocational training  - Boys (Age 11 - 14),70,INMATES,t,41
+Children having Vocational training ,Children having Vocational training  - Boys (Age 15 - 18),71,INMATES,t,42
+Children having Vocational training ,Children having Vocational training  - Transgenders (Total),72,INMATES,t,43
+Children having Vocational training ,Children having Vocational training  - Transgenders (Age 0 - 5),73,INMATES,t,44
+Children having Vocational training ,Children having Vocational training  - Transgenders (Age 6 - 10),74,INMATES,t,45
+Children having Vocational training ,Children having Vocational training  - Transgenders (Age 11 - 14),75,INMATES,t,46
+Children having Vocational training ,Children having Vocational training  - Transgenders (Age 15 - 18),76,INMATES,t,47
+Children with Special Need,Children with Special Need,77,INMATES,t,48
+Children with Special Need,Children with Special Need (Mental),78,INMATES,t,49
+Children with Special Need,Children with Special Need (Physical),79,INMATES,t,50
+Children with Special Need,Children with Special Need (Both),80,INMATES,t,51
+Run Away Children,Run Away Children,81,INMATES,t,52
+Run Away Children,Run Away Children (Transgender),84,INMATES,t,55
+Deceased Children,Deceased Children,85,INMATES,t,56
+Run Away Children,Run Away Children (Boys),82,INMATES,t,54
+Run Away Children,Run Away Children (Girls),83,INMATES,t,53
+Maximum Strength,Maximum Strength - NGO Homes (Mixed),23,INSTITUTION,t,22
+Maximum Strength,Maximum Strength - NGO Homes (Girls),22,INSTITUTION,t,21
+Maximum Strength,Maximum Strength - NGO Homes (Boys),21,INSTITUTION,t,20
+Maximum Strength,Maximum Strength - NGO Homes (Total),20,INSTITUTION,t,19
+Maximum Strength,Maximum Strength - Govt. Homes (Mixed),19,INSTITUTION,t,18
+Maximum Strength,Maximum Strength - Govt. Homes (Girls),18,INSTITUTION,t,17
+Maximum Strength,Maximum Strength - Govt. Homes (Boys),17,INSTITUTION,t,16
+Maximum Strength,Maximum Strength - Govt. Homes (Total),16,INSTITUTION,t,15
+Maximum Strength,Maximum Strength,15,INSTITUTION,t,14
